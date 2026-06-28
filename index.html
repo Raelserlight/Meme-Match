@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Match - Ultimate Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div class="game-container">
+        
+        <div class="home-panel glass-panel" id="home-panel" style="display: none;">
+            <div class="profile-section">
+                <div class="avatar"></div>
+                <h2 id="welcome-text">หวัดดีจั้ฟฟ, Player</h2>
+            </div>
+            <div class="menu-buttons">
+                <button id="btn-play" class="menu-btn glass-btn">คลิกเพื่อเริ่มเกม</button>
+                <button id="btn-stats" class="menu-btn glass-btn">สถิติง่อยๆของฉัน</button>
+                <button id="btn-leaderboard" class="menu-btn glass-btn">ลีดเดอร์บอร์ด 20 อันดับ</button>
+                <button id="btn-logout" class="menu-btn glass-btn logout">ออกจากระบบ</button>
+            </div>
+        </div>
+
+        <div id="game-ui" style="display: none;">
+            <div class="header glass-panel">
+                <h1>Meme Match</h1>
+                <div class="stats">
+                    <span class="badge" id="phase-display">Phase: 1/3</span>
+                    <span class="badge" id="wrong-display">Wrong: 0/32</span>
+                </div>
+            </div>
+
+            <div class="board glass-panel" id="game-board">
+                <h2 style="grid-column: span 4; text-align: center;">กำลังโหลดมีม</h2>
+            </div>
+            <button id="btn-back-home" class="badge" style="cursor: pointer; margin-top: 15px; width: 100%;">⬅ กลับหน้าหลัก</button>
+        </div>
+
+        <div class="leaderboard glass-panel" id="leaderboard-panel" style="display: none;">
+            <h2 id="leaderboard-title">Top 20</h2>
+            <ul id="score-list"></ul>
+            <button id="btn-back-home-2" class="badge" style="cursor: pointer; margin-top: 20px;">⬅ กลับหน้าหลัก</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

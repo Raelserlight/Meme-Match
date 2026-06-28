@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #091221, #0f2a4a, #1a4a76);
+    color: #ffffff;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.home-panel {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.profile-section .avatar {
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.menu-btn {
+    padding: 15px;
+    font-size: 1.2rem;
+    color: white;
+    background: rgba(0, 195, 255, 0.1);
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(0, 195, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.menu-btn.logout {
+    background: rgba(255, 50, 50, 0.1);
+    border-color: rgba(255, 50, 50, 0.3);
+}
+
+.menu-btn.logout:hover {
+    background: rgba(255, 50, 50, 0.3);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    mar
+    font-size: 1.5rem;
+}
+
+.stats { display: flex; gap: 10px; font-weight: bold; }
+.badge {
+    background: rgba(0, 195, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    color: #fff;
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+    min-height: 400px;
+}
+
+.card {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card:hover { transform: translateY(-5px); box-shadow: 0 0 15px rgba(0, 195, 255, 0.4); }
+.card::after { content: '?'; font-size: 3rem; color: rgba(255, 255, 255, 0.5); position: absolute; }
+.card.flipped::after, .card.matched::after { display: none; }
+.card img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.card.flipped img, .card.matched img { display: block; }
+.card.matched { opacity: 0.6; pointer-events: none; }
+
+.leaderboard { padding: 20px; text-align: center; }
+.leaderboard ul { list-style: none; padding: 0; margin: 0; max-height: 300px; overflow-y: auto; }
+.leaderboard li { background: rgba(255,255,255,0.1); margin: 5px 0; padding: 10px; border-radius: 5px; display: flex; justify-content: space-between; }
+
+div:where(.swal2-container) div:where(.swal2-popup) {
+    background: rgba(15, 30, 60, 0.7) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+    border-radius: 20px !important;
+}
+
+.swal2-title, .swal2-html-container { color: white !important; }
+.swal2-input {
+    background: rgba(0,0,0,0.3) !important;
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+}
+.swal2-input::placeholder { color: rgba(255,255,255,0.5) !important; }
